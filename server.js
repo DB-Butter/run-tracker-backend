@@ -10,7 +10,7 @@ const port = process.env.PORT || 4000;
 app.use(cors());
 app.use(express.json());
 
-const uri = process.env.ATLAS_URI
+const uri = process.env.ATLAS_URI || "mongodb+srv://db:db@tracker.l3ovcx3.mongodb.net/?retryWrites=true&w=majority"
 mongoose.connect(uri, { useNewUrlParser: true });
 const connection = mongoose.connection;
 connection.once('open', () => {
